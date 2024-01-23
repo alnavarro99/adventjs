@@ -1,3 +1,4 @@
 export const findFirstRepeated = (gifts: number[]): number => {
-  return 0
+  const set = new Set(gifts)
+  return gifts.find((el, i) => el !== Array.from(set.values())?.[i]) ?? -1
 }
