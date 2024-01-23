@@ -1,0 +1,1 @@
+Adventjs code result.

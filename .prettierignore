@@ -1,2 +1,6 @@
-build
 coverage
+node_modules
+pnpm-lock.yaml
+coverage
+dist
+husky
