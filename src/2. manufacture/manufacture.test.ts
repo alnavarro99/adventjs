@@ -30,9 +30,11 @@ import { manufacture } from './manufacture'
 
 describe('Manufacture TDD', () => {
   test('Scenario 1:', () => {
-    expect(manufacture(['tren', 'oso', 'pelota'], 'tronesa')).toBe('')
-    expect(manufacture(['juego', 'puzzle'], 'jlepuz')).toBe('')
-    expect(manufacture(['libro', 'ps5'], 'psli')).toBe('')
+    expect(manufacture(['tren', 'oso', 'pelota'], 'tronesa')).toStrictEqual([
+      'tren',
+      'oso',
+    ])
+    expect(manufacture(['juego', 'puzzle'], 'jlepuz')).toStrictEqual(['puzzle'])
+    expect(manufacture(['libro', 'ps5'], 'psli')).toStrictEqual([])
   })
-  test('Scenario 2:', () => {})
 })
