@@ -36,6 +36,9 @@ describe('TDD: revertInner test', () => {
   test('Scenario 2: Anidacion profunda', () => {
     expect(revertInner('sa(u(cla)atn)s')).toBe('santaclaus')
   })
+  test('Scenario 3: Anidacion profunda conjunta', () => {
+    expect(revertInner('((nta)(sa))')).toBe('santa')
+  })
 })
 
 describe('TDD: decode test', () => {
