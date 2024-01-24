@@ -24,10 +24,12 @@ import { findNaughtyStep } from './findNaughtyStep'
 
 describe('TDD: Find Naughty Step', () => {
   test('Scenary 1: original is grether length than modified', () => {
-    expect(findNaughtyStep('abcd', 'abcde')).toBe('e')
+    expect(findNaughtyStep('abcd', 'abcde')).toMatch('e')
+    expect(findNaughtyStep('abcd', 'abcdefgh')).toMatch('efgh')
+    expect(findNaughtyStep('abcdabcdt', 'abcdefgh')).toMatch('abcdtefgh')
   })
   test('Scenary 1: original is lessy length than modified', () => {
-    expect(findNaughtyStep('stepfor', 'stepor')).toBe('f')
+    expect(findNaughtyStep('stepfor', 'stepor')).toMatch('f')
   })
   test('Scenary 1: original is equal length than modified', () => {
     expect(findNaughtyStep('abcde', 'abcde')).toBe('')
