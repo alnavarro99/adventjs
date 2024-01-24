@@ -23,9 +23,13 @@ findNaughtyStep(original, modified) // ''
 import { findNaughtyStep } from './findNaughtyStep'
 
 describe('TDD: Find Naughty Step', () => {
-  test('Primary Scenary: ', () => {
-    expect(findNaughtyStep('abcd', 'abcde')).toBe('')
-    expect(findNaughtyStep('stepfor', 'stepor')).toBe('')
+  test('Scenary 1: original is grether length than modified', () => {
+    expect(findNaughtyStep('abcd', 'abcde')).toBe('e')
+  })
+  test('Scenary 1: original is lessy length than modified', () => {
+    expect(findNaughtyStep('stepfor', 'stepor')).toBe('f')
+  })
+  test('Scenary 1: original is equal length than modified', () => {
     expect(findNaughtyStep('abcde', 'abcde')).toBe('')
   })
 })
