@@ -1,4 +1,4 @@
-export const revertInner = (message: string, acc?: string): string => {
+export const revertInner = (message: string): string => {
   if (!message.match(/(\(.*\))/g)) {
     return message
   } else {
