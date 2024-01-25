@@ -4,22 +4,6 @@
  * Tu tarea es escribir una función que identifique y devuelva el primer paso extra que se ha añadido o eliminado en la cadena de fabricación. Si no hay ninguna diferencia entre las secuencias, devuelve una cadena vacía.
  */
 
-/**
-```ts
-const original = 'abcd'
-const modified = 'abcde'
-findNaughtyStep(original, modified) // 'e'
-
-const original = 'stepfor'
-const modified = 'stepor'
-findNaughtyStep(original, modified) // 'f'
-
-const original = 'abcde'
-const modified = 'abcde'
-findNaughtyStep(original, modified) // ''
-```
-**/
-
 import { findNaughtyStep } from './findNaughtyStep'
 
 describe('TDD: Find Naughty Step', () => {
