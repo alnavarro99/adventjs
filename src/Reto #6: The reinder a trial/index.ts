@@ -7,10 +7,8 @@ const type = {
 export const maxDistance = (movements: string): number => {
   return Math.max(
     ...[
-      Math.abs(count(movements, type.right) - count(movements, type.left)) +
-        count(movements, type.both),
-      Math.abs(count(movements, type.right) - count(movements, type.left)) -
-        count(movements, type.both),
+      Math.abs(count(movements, type.right) - count(movements, type.left)) + count(movements, type.both),
+      Math.abs(count(movements, type.right) - count(movements, type.left)) - count(movements, type.both),
     ]
   )
 }

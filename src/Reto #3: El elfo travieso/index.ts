@@ -11,7 +11,5 @@ export const findNaughtyStep = (original: string, modified: string): string => {
     }
     return _difference
   }
-  return Array.from(
-    symetricDifference(new Set(original), new Set(modified))
-  ).join('')
+  return Array.from(symetricDifference(new Set(original), new Set(modified))).join('')
 }
