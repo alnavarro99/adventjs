@@ -1,3 +1,4 @@
+// TODO: #fail #adventjs
 export const findNaughtyStep = (original: string, modified: string): string => {
   const symetricDifference = (setA: Set<string>, setB: Set<string>) => {
     const _difference = new Set(setA)

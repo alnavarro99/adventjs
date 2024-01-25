@@ -10,23 +10,6 @@
  * - El nivel máximo de anidamiento es 2.
  */
 
-/**
-```ts
-const a = decode('hola (odnum)')
-console.log(a) // hola mundo
-
-const b = decode('(olleh) (dlrow)!')
-console.log(b) // hello world!
-
-const c = decode('sa(u(cla)atn)s')
-console.log(c) // santaclaus
-
-// Paso a paso:
-// 1. Invertimos el anidado -> sa(ualcatn)s
-// 2. Invertimos el que queda -> santaclaus
-```
- * */
-
 import { decode, revertInner } from './decode'
 
 describe('TDD: revertInner test', () => {
