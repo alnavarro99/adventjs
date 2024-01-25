@@ -10,7 +10,7 @@
  * - El nivel máximo de anidamiento es 2.
  */
 
-import { decode, revertInner } from './decode'
+import { decode, revertInner } from '.'
 
 describe('TDD: revertInner test', () => {
   test('Scenario 1: Sin Anidacion', () => {

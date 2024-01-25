@@ -4,7 +4,7 @@
  * Tu tarea es escribir una función que identifique y devuelva el primer paso extra que se ha añadido o eliminado en la cadena de fabricación. Si no hay ninguna diferencia entre las secuencias, devuelve una cadena vacía.
  */
 
-import { findNaughtyStep } from './findNaughtyStep'
+import { findNaughtyStep } from '.'
 
 describe('TDD: Find Naughty Step', () => {
   test('Scenary 1: original is grether length than modified', () => {

@@ -10,8 +10,7 @@
     "coverage": "jest --coverage",
     "pretty": "prettier . --write",
     "prepare": "husky install",
-    "lint": "eslint",
-    "build": "tsc"
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",

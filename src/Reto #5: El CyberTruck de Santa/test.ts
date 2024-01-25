@@ -16,7 +16,7 @@
  * - Los elfos se inspiraron en este reto de Code Wars.
  */
 
-import { cyberReindeer } from './cyberReindeer'
+import { cyberReindeer } from '.'
 
 describe("TDD: Santa CyberTruck's", () => {
   test('SC:', () => {

@@ -16,7 +16,7 @@
  * Ten en cuenta que no importa si es a la izquierda o la derecha, la distancia es el valor absoluto de la distancia recorrida máxima al finalizar los movimientos.
  */
 
-import { maxDistance, count } from './maxDistance'
+import { maxDistance, count } from '.'
 
 describe('TDD: maxDistance test', () => {
   test('SC1: maxDistance función', () => {

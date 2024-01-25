@@ -3,7 +3,8 @@
  * Sin embargo, debido a un error en la máquina de juguetes, algunos números se han asignado a más de un juguete.
  */
 
-import { findFirstRepeated } from './findFirstRepeated'
+import { findFirstRepeated } from '.'
+
 describe('First Find Repeat', () => {
   test('Scenario 1: find the first repeat id', () => {
     expect(findFirstRepeated([2, 1, 3, 5, 3, 2])).toBe(3)
