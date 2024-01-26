@@ -7,7 +7,7 @@
 
 import { createChristmasTree } from '.'
 
-describe('First Find Repeat', () => {
+describe('TDD: create christmas tree -> primary cases', () => {
   test('SC: primary cases', () => {
     expect(createChristmasTree('123', 4)).toBe(result1)
     expect(createChristmasTree('*@o', 3)).toBe(result2)
