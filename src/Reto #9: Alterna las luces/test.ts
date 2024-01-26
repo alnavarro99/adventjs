@@ -4,21 +4,36 @@
  * Nos han pedido que escribamos una función adjustLights que, dado un array de strings con el color de cada luz (representados con los emojis 🔴 para el rojo y 🟢 para el verde), devuelva el número mínimo de luces que hay que cambiar para que estén los colores alternos.
  */
 
-import { adjustLights, changeLights } from '.'
+import { adjustLights, createLights } from '.'
 
-describe('TDD: adjust the lights', () => {
-  test('SC1: lights changes', () => {
-    expect(changeLights(['🟢', '🔴', '🟢', '🟢', '🟢'])).toStrictEqual(['🟢', '🔴', '🟢', '🔴', '🟢'])
-    expect(changeLights(['🔴', '🔴', '🟢', '🔴', '🟢'])).toStrictEqual(['🔴', '🟢', '🔴', '🟢', '🔴'])
-    expect(changeLights(['🔴', '🔴', '🟢', '🟢', '🔴'])).toStrictEqual(['🔴', '🟢', '🔴', '🟢', '🔴'])
-    expect(changeLights(['🟢', '🔴', '🟢', '🔴', '🟢'])).toStrictEqual(['🟢', '🔴', '🟢', '🔴', '🟢'])
-    expect(changeLights(['🔴', '🔴', '🔴'])).toBe(['🔴', '🟢', '🔴'])
-  })
-  test('SC2: number of changes', () => {
+describe('TDD: primary functions', () => {
+  test('SC1: number of changes -> primary cases', () => {
     expect(adjustLights(['🟢', '🔴', '🟢', '🟢', '🟢'])).toBe(1)
     expect(adjustLights(['🔴', '🔴', '🟢', '🔴', '🟢'])).toBe(1)
     expect(adjustLights(['🔴', '🔴', '🟢', '🟢', '🔴'])).toBe(2)
     expect(adjustLights(['🟢', '🔴', '🟢', '🔴', '🟢'])).toBe(0)
     expect(adjustLights(['🔴', '🔴', '🔴'])).toBe(1)
+  })
+  test('SC2: number of changes -> especial cases', () => {
+    expect(adjustLights([])).toBe(0)
+    expect(adjustLights(['🔴', '🔴'])).toBe(1)
+    expect(adjustLights(['🟢', '🟢'])).toBe(1)
+    expect(adjustLights(['🔴', '🟢'])).toBe(0)
+    expect(adjustLights(['🟢', '🟢'])).toBe(0)
+    expect(adjustLights(['🟢'])).toBe(0)
+    expect(adjustLights(['🔴'])).toBe(0)
+  })
+})
+
+describe('TDD: secondary functions', () => {
+  test('SC2: create list of lights', () => {
+    expect(createLights('🟢', 5)).toStrictEqual(['🟢', '🔴', '🟢', '🔴', '🟢'])
+    expect(createLights('🔴', 5)).toStrictEqual(['🔴', '🟢', '🔴', '🟢', '🔴'])
+    expect(createLights('🟢', 8)).toStrictEqual(['🟢', '🔴', '🟢', '🔴', '🟢', '🔴', '🟢', '🔴'])
+    expect(createLights('🔴', 8)).toStrictEqual(['🔴', '🟢', '🔴', '🟢', '🔴', '🟢', '🔴', '🟢'])
+    expect(createLights('🟢', 1)).toStrictEqual(['🟢'])
+    expect(createLights('🔴', 1)).toStrictEqual(['🔴'])
+    expect(createLights('🟢', 0)).toStrictEqual([])
+    expect(createLights('🔴', 0)).toStrictEqual([])
   })
 })
