@@ -16,23 +16,29 @@ describe('TDD: primary functions', () => {
   })
   test('SC2: number of changes -> especial cases', () => {
     expect(adjustLights([])).toBe(0)
-    expect(adjustLights(['🔴', '🔴'])).toBe(1)
-    expect(adjustLights(['🟢', '🟢'])).toBe(1)
-    expect(adjustLights(['🔴', '🟢'])).toBe(0)
-    expect(adjustLights(['🟢', '🟢'])).toBe(0)
     expect(adjustLights(['🟢'])).toBe(0)
     expect(adjustLights(['🔴'])).toBe(0)
+    expect(adjustLights(['🔴', '🟢'])).toBe(0)
+    expect(adjustLights(['🟢', '🔴'])).toBe(0)
+    expect(adjustLights(['🔴', '🔴'])).toBe(1)
+    expect(adjustLights(['🟢', '🟢'])).toBe(1)
   })
 })
 
 describe('TDD: secondary functions', () => {
-  test('SC2: create list of lights', () => {
+  test('SC1: create list of lights -> odd cases', () => {
     expect(createLights('🟢', 5)).toStrictEqual(['🟢', '🔴', '🟢', '🔴', '🟢'])
     expect(createLights('🔴', 5)).toStrictEqual(['🔴', '🟢', '🔴', '🟢', '🔴'])
+  })
+  test('SC2: create list of lights -> eveen cases', () => {
     expect(createLights('🟢', 8)).toStrictEqual(['🟢', '🔴', '🟢', '🔴', '🟢', '🔴', '🟢', '🔴'])
     expect(createLights('🔴', 8)).toStrictEqual(['🔴', '🟢', '🔴', '🟢', '🔴', '🟢', '🔴', '🟢'])
+  })
+  test('SC3: create list of lights -> especial cases', () => {
     expect(createLights('🟢', 1)).toStrictEqual(['🟢'])
     expect(createLights('🔴', 1)).toStrictEqual(['🔴'])
+    expect(createLights('🟢', 2)).toStrictEqual(['🟢', '🔴'])
+    expect(createLights('🔴', 2)).toStrictEqual(['🔴', '🟢'])
     expect(createLights('🟢', 0)).toStrictEqual([])
     expect(createLights('🔴', 0)).toStrictEqual([])
   })
