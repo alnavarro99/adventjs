@@ -1,0 +1,6 @@
+{
+  "*.ts": ["prettier --write", "eslint --fix"],
+  "*.test.ts": "jest --silent",
+  ".*rc": "prettier --write --bail 2",
+  "*.json": "prettier --write"
+}

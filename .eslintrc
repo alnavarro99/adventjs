@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/strict",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "prettier",
+    "plugin:sonarjs/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "sonarjs"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": ["./tsconfig.json"] }
+}
