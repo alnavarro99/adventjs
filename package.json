@@ -1,16 +1,17 @@
 {
   "name": "adventjs",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:w": "jest --watch",
-    "coverage": "jest --coverage",
-    "pretty": "prettier . --write",
-    "prepare": "husky install",
-    "lint": "eslint"
+    "test:watch": "jest --watch",
+    "test:debugger": "node --inspect-brk --watch ./node_modules/jest/bin/jest.js --runInBand --config jest.config.js -o",
+    "test:coverage": "jest --coverage",
+    "format:pretty": "prettier . --write",
+    "husky:prepare": "husky install",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "keywords": [],
   "author": "",
