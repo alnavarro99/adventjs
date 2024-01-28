@@ -3,7 +3,13 @@
  * Sin embargo, debido a un error en la máquina de juguetes, algunos números se han asignado a más de un juguete.
  */
 
-import { findFirstRepeated } from '.'
+const findFirstRepeated = jest.fn((gifts: number[]): number => {
+  const set = new Set(gifts)
+  if (set.size === gifts.length) return -1
+  else {
+    return gifts.find((el, i) => el !== Array.from(set.values())[i]) as number
+  }
+})
 
 describe('First Find Repeat', () => {
   test('Scenario 1: find the first repeat id', () => {

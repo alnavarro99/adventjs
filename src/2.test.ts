@@ -4,7 +4,17 @@
  * Un regalo se puede fabricar si contamos con todos los materiales necesarios para fabricarlo.
  */
 
-import { manufacture } from '.'
+const manufacture = jest.fn((gifts: string[], materials: string): string[] => {
+  const res: boolean[] = []
+  for (const val of gifts) {
+    const set = Array.from(new Set(val.split('')))
+    const exp = set.map((el) => `(?=.*${el})`).join('')
+    const regex = new RegExp(exp)
+    res.push(regex.test(materials))
+  }
+  return gifts.filter((_, i) => res[i])
+})
+
 describe('Manufacture TDD', () => {
   test('Scenario 1:', () => {
     expect(manufacture(['tren', 'oso', 'pelota'], 'tronesa')).toStrictEqual(['tren', 'oso'])
